@@ -1,0 +1,11 @@
+//- SINTAXIS QUE INDICA QUE ES UN MIXIN
+//- EL MIXIN crearProyecto QUE TOMA POR PARÁMETRO UN proyecto VACÍO, PARA CUANDO SE CREE UN NUEVO PROYECTO
+mixin crearProyecto( proyecto = {} )
+
+    //- SI HAY UN proyecto.id SE AGREGA AL FINAL DEL POST, SINO NADA
+    form.agregar-proyecto(action=`/nuevo-proyecto/${proyecto.id || ''}` method="POST")
+        .campo 
+            label(for="nombre") Nuevo Proyecto: 
+            input(value=proyecto.nombre type="text" id="nombre" name="nombre" placeholder="Nombre proyecto")
+        .campo.enviar 
+            input(type="submit" value=`${proyecto.nombre ? 'Guardar' : 'Agregar'}` class="boton")
