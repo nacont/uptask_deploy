@@ -5,7 +5,7 @@ const db = require('../config/db');
 // IMPORTAMOS SLUG
 const slug = require('slug');
 // IMPORTAMOS SHORTID
-const shortId = require('shortId');
+const shortId = require('shortid');
 // DEFINIMOS EL MODELO. LE DAMOS EL MODELO
 const Proyectos = db.define('proyectos',{
     // DEFINIMOS LA ESTRUCTURA DE LA BASE DE DATOS
