@@ -64,6 +64,7 @@ exports.nuevoProyecto = async (req, res) => {
 }
 
 exports.proyectoPorUrl = async (req, res, next) => {
+    const usuarioId = res.locals.usuario.id;
     const proyectosPromise = Proyectos.findAll({
         where: {
             usuarioId: usuarioId
